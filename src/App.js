@@ -1,12 +1,21 @@
-import Profile from './pages/Profile/Profile'
-import Repositories from './pages/Repositories/Repositories'
-import Layout from './pages/Layout'
+import Layout from './pages/Layout';
+import HomePage from './pages/Homepage/Homepage';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/"><HomePage /></Route>
+        <Route path="/profile/:username" ><Layout /></Route>
+      </Switch>
+    </Router>
   );
 }
 

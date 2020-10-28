@@ -1,0 +1,13 @@
+.header {
+    height: 10vh;
+    background-color: #0F7173;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: white
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}

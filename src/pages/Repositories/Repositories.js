@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import {Doughnut} from 'react-chartjs-2';
 import Spinner from 'react-bootstrap/Spinner'
 
-let url = 'https://api.github.com/users/chikaEche/repos';
+let url = 'https://api.github.com/users/';
 
 
-export default function Repositories() {
+export default function Repositories(props) {
     const [repositoryState, setRepositoryState] = useState();
     let labels = [];
     let datasets = {
@@ -19,6 +19,8 @@ export default function Repositories() {
     };
 
     let getRepositories = () => {
+        url = `${url}${props.username}/repos`;
+        console.log(url)
         let repositories = [];
         fetch(url)
         .then(res => res.json())
@@ -62,7 +64,7 @@ export default function Repositories() {
                     },
                     legend: {
                         display: true,
-                        position: 'right'
+                        position: 'top'
                     }
                 }}
                 >

@@ -1,0 +1,63 @@
+.content {
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile, .repository {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.doughnut {
+    width: 100%;
+}
+
+.repository {
+    width: 60%;
+    height: 100vh
+}
+
+.spin {
+    width: 10% !important;
+    height: 10% !important;
+}
+
+.divide {
+    height: 70vh;
+    width: 0.06px;
+    border:  0.5px solid black;
+}
+
+.repository div {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image {
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.profile__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

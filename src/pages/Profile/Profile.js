@@ -1,6 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
-import getProfile from '../../Util/profile-grabber';
+import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner'
 
 const url = 'https://api.github.com/users/chikaEche';
 
@@ -11,7 +13,6 @@ export default function Profile() {
         fetch(url)
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
             setProfile(data)
         })
         .catch(e => console.error(e))
@@ -24,33 +25,17 @@ export default function Profile() {
     return <div>
         {
             profile ?
-            <div>
-                <h1>{profile.login}</h1>
+            <div className="profile__container">
+                <Image className="image" src={profile.avatar_url} roundedCircle/>
+                <h4>{profile.name}</h4>
+                <h4><a href={profile.html_url} target="_blank">@{profile.login}</a></h4>
+                <h4>Joined on : {profile.created_at.split('T')[0]}</h4>
             </div>
-            : <h1>Loading...</h1>
+            : 
+            <Spinner animation="border" role="status">
+                <span className="sr-only">Loading...</span>
+            </Spinner>
         }
     </div>
     
 }
-
-// let GetProfile = async () => {
-//     try {
-//         let res = await axios.get(url);
-//         let profile = res.data;
-//         return <p>{profile.login}</p>
-//     }
-//     catch(err) {
-//         console.log(err)
-//     }
-// }
-
-// function Profile() {
-
-//     const[state, SetState] = useState({
-//         profile: {}
-//     })
-
-//     return <h3>{GetProfile()}</h3>
-// }
-
-// export default Profile;

@@ -1,9 +1,11 @@
 import Profile from './pages/Profile/Profile'
+import Repositories from './pages/Repositories/Repositories'
+import Layout from './pages/Layout'
 
 function App() {
   return (
     <div className="App">
-      <Profile />
+      <Layout />
     </div>
   );
 }
